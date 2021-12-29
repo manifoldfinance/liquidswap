@@ -1,6 +1,7 @@
 import '@typechain/hardhat';
 import 'dotenv/config';
 import { HardhatUserConfig } from 'hardhat/types';
+import 'hardhat-abi-exporter'
 
 const mnemonic = 'test test test test test test test test test test test junk';
 
@@ -28,6 +29,14 @@ const config: HardhatUserConfig = {
     outDir: 'src/',
     target: 'ethers-v5',
   },
+abiExporter: {
+  path: './data/abi',
+  runOnCompile: true,
+  clear: true,
+  flat: true,
+  spacing: 2,
+  pretty: true,
+  }
 };
 
 export const defaultSolcOutputSelection = {
